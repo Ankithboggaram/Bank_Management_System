@@ -8,7 +8,7 @@ public class SavingsAccount extends Account
 		setWithdrawalLimit(500,20000);
 		setBalance(500);
 	}
-	SavingsAccount(String an, String pin, double balance, UserInformation u)
+	SavingsAccount(String an, String pin, String acno, double balance, UserInformation u)
 	{
 		this(u);
 		super.setAccountNo(an);

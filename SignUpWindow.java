@@ -95,12 +95,12 @@ public class SignUpWindow extends JFrame implements ActionListener
 	    jp2.add(maleB);
 	    jp2.add(femaleB);
 	    
-	    jp.add(jp3);
-	    generateDate();
-	    jp3.add(new JLabel("Birth Date: "));
-	    jp3.add(day);
-	    jp3.add(month);
-	    jp3.add(year);
+	    // jp.add(jp3);
+	    // generateDate();
+	    // jp3.add(new JLabel("Birth Date: "));
+	    // jp3.add(day);
+	    // jp3.add(month);
+	    // jp3.add(year);
 
 	    jp.add(jp4);
 	    jp4.setLayout(new GridLayout(0, 2,5,0));
@@ -145,7 +145,7 @@ public class SignUpWindow extends JFrame implements ActionListener
 		{
 			month.addItem(i);
 		}
-		for(int i=1900;i<=2018;i++)
+		for(int i=1900;i<=2022;i++)
 		{
 			year.addItem(i);
 		}

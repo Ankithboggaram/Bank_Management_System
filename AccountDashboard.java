@@ -229,7 +229,7 @@ public class AccountDashboard extends JFrame implements ActionListener
 		center.add(new JLabel(ac.user.firstName + " " + ac.user.lastName));
 		center.add(new JLabel("Sex:"));
 		center.add(new JLabel(ac.user.sex));
-		center.add(new JLabel("Date of Birth:"));
+		//center.add(new JLabel("Date of Birth:"));
 		center.add(new JLabel("Email:"));
 		center.add(new JLabel(ac.user.email));
 		center.add(new JLabel("Phone No.:"));
@@ -302,11 +302,12 @@ public class AccountDashboard extends JFrame implements ActionListener
 			double amount=Double.parseDouble(amountT.getText());
 			
 			Account otherAccount;
+			
 			if((otherAccount=db.getAccount(accountNoT.getText()))!=null)
 			{
 				if(ac.transferMoney(otherAccount, amount))
 				{
-					JOptionPane.showMessageDialog(this,"Successfully Transferred","Success",JOptionPane.OK_OPTION);
+					JOptionPane.showMessageDialog(this,"Successfully Transferred","Success",JOptionPane.YES_OPTION);
 				}
 				else
 				{
@@ -333,7 +334,7 @@ public class AccountDashboard extends JFrame implements ActionListener
 			double amount=Double.parseDouble(amountT.getText());
 			int t=ac.withdrawMoney(amount);
 			if(t==0)
-				JOptionPane.showMessageDialog(this,"Successfully Withdrawn","Success",JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(this,"Successfully Withdrawn","Success",JOptionPane.YES_OPTION);
 			else if(t==Account.INSUFFICIENT_BALANCE)
 				JOptionPane.showMessageDialog(this,"You don't have enough Balance","Failed",JOptionPane.ERROR_MESSAGE);
 			else if(t==Account.WITHDRAWAL_LIMIT_UNDER)
@@ -370,11 +371,11 @@ public class AccountDashboard extends JFrame implements ActionListener
 		{
 			JOptionPane.showMessageDialog(this,"Please Fill all the Fields","Failed",JOptionPane.ERROR_MESSAGE);
 		}
-		else if(pwd1 != ac.getPIN())
+		else if(!(pwd1.equals(ac.getPIN())))
 		{
 			JOptionPane.showMessageDialog(this,"Wrong PIN Entered","Failed",JOptionPane.ERROR_MESSAGE);
 		}
-		else if(pwd2 != pwd3)
+		else if(!(pwd2.equals(pwd3)))
 		{
 			JOptionPane.showMessageDialog(this,"New PINs doesn't Match","Failed",JOptionPane.ERROR_MESSAGE);
 		}

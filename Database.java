@@ -107,8 +107,7 @@ public class Database
 				
 				if(type.equals(String.valueOf(Account.SAVINGS_ACCOUNT)))
 				{
-					ac=new SavingsAccount(br.readLine(),br.readLine(),Double.parseDouble(br.readLine()),
-							new UserInformation(br.readLine(), br.readLine(), br.readLine(), br.readLine(), br.readLine(),
+					ac=new SavingsAccount(new UserInformation(br.readLine(), br.readLine(), br.readLine(), br.readLine(), br.readLine(),
 									br.readLine(), br.readLine(), br.readLine()));
 					ac.isActivated=Boolean.getBoolean(br.readLine());
 				}
